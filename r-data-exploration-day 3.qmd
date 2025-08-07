@@ -1,0 +1,46 @@
+---
+title: "r-data-exploration"
+format: html
+editor: visual
+---
+
+## Data Exploration and Summarizing 
+
+```{r}
+#attach packages
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+
+```{r}
+View(diamonds)
+```
+
+```{r}
+#explore names(), dim(), summary(), head(), tail(), and skimr::skim()
+
+names(diamonds)
+dim(diamonds)
+summary(diamonds)
+head(diamonds)
+tail(diamonds)
+skimr::skim(diamonds)
+```
+
+Create Plots
+```{r}
+#create a pairs plot 
+
+GGally::ggpairs(penguins)
+```
+```{r}
+ggplot(data = diamonds, aes(x = carat, y = price)) +
+  geom_point()
+```
+```{r}
+ggplot(data = diamonds, aes(x = carat)) +
+  geom_histogram()
+```
+```
+
